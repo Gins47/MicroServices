@@ -35,6 +35,15 @@ app.get('/posts',(req,res)=>{
 
 })
 
+
+app.post('/events',async(req,res)=>{
+
+    console.log(`Post event recieved = ${req.body.type}`)
+    res.send({})
+
+})
+
+
 app.listen(4000,()=>{
     console.log("App listening at port 4000")
 })

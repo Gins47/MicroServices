@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+//import React, { useState, useEffect } from 'react';
+import React from 'react';
+//import axios from 'axios';
 
-export default ({ postId }) => {
+export default ({ comments }) => {
+
+  /*
   const [comments, setComments] = useState([]);
 
   const fetchData = async () => {
       console.log(`Inside comment list ${postId}`)
-      console.log(
-        `http://localhost:4001/posts/${postId}/comments`)
     const res = await axios.get(
       `http://localhost:4001/posts/${postId}/comments`
     );
@@ -19,7 +20,7 @@ export default ({ postId }) => {
   useEffect(() => {
     fetchData();
   }, []);
-
+*/
   const renderedComments = comments.map(comment => {
     return <li key={comment.id}>{comment.content}</li>;
   });
