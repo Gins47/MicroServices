@@ -10,9 +10,9 @@
 - Create docker image
 
 ```
- docker build -t ginsp/ticket-auth:api-error .
+ docker build -t ginsp/ticket-auth:jwt1 .
 
- docker push ginsp/ticket-auth:api-error
+ docker push ginsp/ticket-auth:jwt1
 
 
 
@@ -37,7 +37,16 @@ helm upgrade auth ./auth
 
 * MongoDB
 
-helm create auth-mongo
+helm install auth-mongo --values auth-mongo-values.yaml bitnami/mongodb
+
+helm uninstall auth-mongo
+
+helm install auth-mongo ./auth-mongo
+
+helm upgrade auth-mongo ./auth-mongo
+
+* Find a way to enable auth and authenticate with the mongo pod
+
 
 
 
@@ -54,4 +63,8 @@ minikube addons enable ingress
 kubectl expose deployment auth --type=NodePort --port=3000
 
 helm install mongo bitnami/mongodb
+
+# Creating secret
+
+kubectl create secret generic jet-secret --from-literal=JWT_KEY=qwwert
 

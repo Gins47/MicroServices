@@ -1,0 +1,208 @@
+{
+	"id": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+	"name": "Microservice",
+	"description": "",
+	"order": [],
+	"folders": [
+		{
+			"name": "Ticketing",
+			"description": "",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"order": [
+				"2d7f2a34-80f8-0c8a-4e28-da88273437a0",
+				"5c22066a-3bf6-964c-0cea-75c853c720e7"
+			],
+			"owner": "4706367",
+			"folders_order": [],
+			"id": "7d1499d9-d72a-0e5b-237f-69c58691fb60"
+		},
+		{
+			"name": "simple-app",
+			"description": "",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"order": [
+				"a313083d-0da8-9108-492b-601e048c614b",
+				"a175ce92-a0cf-d92c-455a-e7675cfee9d1",
+				"708f3671-62d5-7fd2-9f5f-029f6d9c5817",
+				"d43d87df-7d93-8ef6-4f54-280471cb91b3"
+			],
+			"owner": "4706367",
+			"folders_order": [],
+			"id": "03065aff-34cc-7a64-0945-c5f6915cf638"
+		}
+	],
+	"folders_order": [
+		"7d1499d9-d72a-0e5b-237f-69c58691fb60",
+		"03065aff-34cc-7a64-0945-c5f6915cf638"
+	],
+	"timestamp": 1601413417029,
+	"owner": "4706367",
+	"public": false,
+	"requests": [
+		{
+			"id": "2d7f2a34-80f8-0c8a-4e28-da88273437a0",
+			"headers": "",
+			"headerData": [],
+			"url": "ticketing.dev/api/users/currentuser",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"data": null,
+			"dataMode": "params",
+			"name": "Test",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1605432123134,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"folder": "7d1499d9-d72a-0e5b-237f-69c58691fb60"
+		},
+		{
+			"id": "5c22066a-3bf6-964c-0cea-75c853c720e7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://ticketing.dev/api/users/signup",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1606044312796,
+			"name": "signup",
+			"description": "",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"hellou5@gmail.com\",\n\t\"password\":\"16235456\"\n}"
+		},
+		{
+			"id": "708f3671-62d5-7fd2-9f5f-029f6d9c5817",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:4001/posts/554e526c/comments",
+			"folder": "03065aff-34cc-7a64-0945-c5f6915cf638",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1605431931285,
+			"name": "create comments",
+			"description": "",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "708f3671-62d5-7fd2-9f5f-029f6d9c5817",
+			"rawModeData": "{\n\t\"content\":\"I am a comment\"\n}"
+		},
+		{
+			"id": "a175ce92-a0cf-d92c-455a-e7675cfee9d1",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:4000/posts",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"data": null,
+			"dataMode": "params",
+			"name": "get post",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1601588941672,
+			"version": 2,
+			"responses": [],
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"isFromCollection": true,
+			"collectionRequestId": "a175ce92-a0cf-d92c-455a-e7675cfee9d1",
+			"folder": "03065aff-34cc-7a64-0945-c5f6915cf638"
+		},
+		{
+			"id": "a313083d-0da8-9108-492b-601e048c614b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://192.168.1.149:4000/posts",
+			"folder": "03065aff-34cc-7a64-0945-c5f6915cf638",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1605431924504,
+			"name": "create post",
+			"description": "",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"responses": [],
+			"rawModeData": "{\n\t\"title\":\"newPost\"\n}"
+		},
+		{
+			"id": "d43d87df-7d93-8ef6-4f54-280471cb91b3",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:4001/posts/554e526c/comments",
+			"folder": "03065aff-34cc-7a64-0945-c5f6915cf638",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1605431935027,
+			"name": "get comments",
+			"description": "",
+			"collectionId": "3c2d4397-998b-f691-bb94-4ddb5e5891fb",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "d43d87df-7d93-8ef6-4f54-280471cb91b3"
+		}
+	]
+}

@@ -2,7 +2,7 @@ const express = require("express");
 import 'express-async-errors'
 import { json } from "body-parser";
 import mongoose from 'mongoose'
-
+import cookieSession from 'cookie-session'
 
 // Routes
 import {currentUserRouter} from './routes/current-user'
@@ -17,7 +17,12 @@ import {NotFoundError} from './errors/not-found'
 
 
 const app = express();
+app.set('trust proxy',true)
 app.use(json());
+app.use(cookieSession({
+  signed:false,
+  secure:false
+}))
 
 // List of routers
 app.use(currentUserRouter)
@@ -31,6 +36,12 @@ app.all('*',async()=>{
 
 // middleware
 app.use(errorHandler)
+
+// check for the secret
+
+if(!process.env.JWT_KEY){
+  throw new Error('JWT_KEY must be defined')
+}
 
 const start = async()=>{
   try{
