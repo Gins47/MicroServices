@@ -10,9 +10,9 @@
 - Create docker image
 
 ```
- docker build -t ginsp/ticket-auth:jwt1 .
+ docker build -t ginsp/ticket-auth:authModule .
 
- docker push ginsp/ticket-auth:jwt1
+ docker push ginsp/ticket-auth:authModule
 
 
 
