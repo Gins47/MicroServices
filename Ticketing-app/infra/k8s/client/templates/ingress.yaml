@@ -1,10 +1,6 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "ingress.fullname" . -}}
+{{- $fullName := include "client.fullname" . -}}
 {{- $svcPort := .Values.service.port -}}
-{{- $authFullName := .Values.ingress.serviceName -}}
-{{- $authSvcPort := .Values.ingress.servicePort -}}
-{{- $clientFullName := .Values.ingress.clientServiceName -}}
-{{- $clientSvcPort := .Values.ingress.clientServicePort -}}
 {{- if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1beta1
 {{- else -}}
@@ -14,7 +10,7 @@ kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    {{- include "ingress.labels" . | nindent 4 }}
+    {{- include "client.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
     {{- toYaml . | nindent 4 }}
@@ -36,16 +32,10 @@ spec:
       http:
         paths:
           {{- range .paths }}
-          - path: /api/users/?(.*)
-          #- path: {{ . }}
+          - path: {{ . }}
             backend:
-              serviceName: {{ $authFullName }}
-              servicePort: {{ $authSvcPort }}
-          - path: /?(.*)
-        #  - path: {{ . }}
-            backend:
-              serviceName: {{ $clientFullName }}
-              servicePort: {{ $clientSvcPort }}
+              serviceName: {{ $fullName }}
+              servicePort: {{ $svcPort }}
           {{- end }}
     {{- end }}
   {{- end }}

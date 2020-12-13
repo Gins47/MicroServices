@@ -14,6 +14,11 @@
 
  docker push ginsp/ticket-auth:authModule
 
+* Client
+
+docker build -t ginsp/ticket-auth:client .
+
+docker push ginsp/ticket-auth:client
 
 
  docker run ginsp/ticket-auth:api-error
@@ -47,8 +52,20 @@ helm upgrade auth-mongo ./auth-mongo
 
 * Find a way to enable auth and authenticate with the mongo pod
 
+* Client
 
 
+helm create client
+
+
+helm install client ./client
+
+helm upgrade client ./client
+
+* Ingress
+
+
+helm upgrade client ./client
 
 
 
@@ -67,4 +84,8 @@ helm install mongo bitnami/mongodb
 # Creating secret
 
 kubectl create secret generic jet-secret --from-literal=JWT_KEY=qwwert
+
+
+* Bypass chrome
+Thisisunsafe
 
